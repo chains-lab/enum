@@ -14,7 +14,7 @@ var BlockStatuses = []string{
 
 var ErrorBlockStatusNotSupported = fmt.Errorf("block distributor status must be one of: %s", GetAllBlockStatuses())
 
-func ParseBlockStatus(status string) error {
+func CheckBlockStatus(status string) error {
 	for _, s := range BlockStatuses {
 		if s == status {
 			return nil

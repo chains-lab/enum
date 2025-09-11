@@ -18,8 +18,8 @@ var supportedLocales = []string{
 
 var ErrorUnsupportedLocale = fmt.Errorf("unsupported locale, supported locales are: %v", supportedLocales)
 
-// IsValidLocaleSupported checks if the given locale is supported
-func IsValidLocaleSupported(locale string) error {
+// CheckLocale checks if the given locale is supported
+func CheckLocale(locale string) error {
 	for _, l := range supportedLocales {
 		if l == locale {
 			return nil

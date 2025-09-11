@@ -19,7 +19,7 @@ var employeeRoles = []string{
 
 var ErrorEmployeeRoleNotSupported = fmt.Errorf("employee role not supported, must be one of: %v", GetAllEmployeeRoles())
 
-func ParseEmployeeRole(role string) error {
+func CheckEmployeeRole(role string) error {
 	for _, r := range employeeRoles {
 		if r == role {
 			return nil
@@ -44,12 +44,12 @@ var AllEmployeeRoles = map[string]uint8{
 // 0 if they are equal.
 // -1 if role1 is less than role2,
 func ComparisonEmployeeRoles(role1, role2 string) (int, error) {
-	err := ParseEmployeeRole(role1)
+	err := CheckEmployeeRole(role1)
 	if err != nil {
 		return -1, fmt.Errorf("parsing role1: %w", err)
 	}
 
-	err = ParseEmployeeRole(role2)
+	err = CheckEmployeeRole(role2)
 	if err != nil {
 		return -1, fmt.Errorf("parsing role2: %w", err)
 	}

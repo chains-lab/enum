@@ -14,7 +14,7 @@ var placeClassStatuses = []string{
 
 var ErrorInvalidPlaceClassStatus = fmt.Errorf("invalid place class status, must be one of: %v", GetAllPlaceClassStatuses())
 
-func IsValidPlaceClassStatus(status string) error {
+func CheckPlaceClassStatus(status string) error {
 	for _, s := range placeClassStatuses {
 		if s == status {
 			return nil

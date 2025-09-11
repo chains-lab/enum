@@ -16,7 +16,7 @@ var distributorStatuses = []string{
 
 var ErrorDistributorStatusNotSupported = fmt.Errorf("distributor status not supported mus be one of: %v", GetAllDistributorStatuses())
 
-func ParseDistributorStatus(status string) error {
+func CheckDistributorStatus(status string) error {
 	for _, s := range distributorStatuses {
 		if s == status {
 			return nil
