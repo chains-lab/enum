@@ -7,14 +7,12 @@ import (
 const (
 	CityGovRoleMayor     = "mayor"
 	CityGovRoleAdvisor   = "advisor"
-	CityGovRoleMember    = "member"
 	CityGovRoleModerator = "moderator"
 )
 
 var citiesAdminsRoles = []string{
 	CityGovRoleMayor,
 	CityGovRoleAdvisor,
-	CityGovRoleMember,
 	CityGovRoleModerator,
 }
 
@@ -35,10 +33,9 @@ func GetAllCityGovsRoles() []string {
 }
 
 var citiesGovsPriority = map[string]int{
-	CityGovRoleMayor:     4,
-	CityGovRoleAdvisor:   3,
-	CityGovRoleModerator: 2,
-	CityGovRoleMember:    1,
+	CityGovRoleMayor:     3,
+	CityGovRoleAdvisor:   2,
+	CityGovRoleModerator: 1,
 }
 
 // CompareCityGovRoles
