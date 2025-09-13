@@ -39,11 +39,11 @@ var AllEmployeeRoles = map[string]uint8{
 	EmployeeRoleModerator: 1,
 }
 
-// ComparisonEmployeeRoles compares two employee roles and returns:
+// CompareEmployeeRoles compares two employee roles and returns:
 // 1 if role1 is greater than role2,
 // 0 if they are equal.
 // -1 if role1 is less than role2,
-func ComparisonEmployeeRoles(role1, role2 string) (int, error) {
+func CompareEmployeeRoles(role1, role2 string) (int, error) {
 	err := CheckEmployeeRole(role1)
 	if err != nil {
 		return -1, fmt.Errorf("parsing role1: %w", err)
