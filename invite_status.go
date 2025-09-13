@@ -5,13 +5,11 @@ import "fmt"
 const (
 	InviteStatusSent     = "sent"
 	InviteStatusAccepted = "accepted"
-	InviteStatusRejected = "rejected"
 )
 
 var allInviteStatuses = []string{
 	InviteStatusSent,
 	InviteStatusAccepted,
-	InviteStatusRejected,
 }
 
 var ErrorInvalidInviteStatus = fmt.Errorf("invalid invite status")
