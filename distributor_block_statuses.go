@@ -7,7 +7,7 @@ const (
 	DistributorBlockStatusCanceled = "cancelled" // Distributor is canceled
 )
 
-var BlockStatuses = []string{
+var distributorBlockStatuses = []string{
 	DistributorBlockStatusActive,
 	DistributorBlockStatusCanceled,
 }
@@ -15,7 +15,7 @@ var BlockStatuses = []string{
 var ErrorDistributorBlockStatusNotSupported = fmt.Errorf("block distributor status must be one of: %s", GetAllDistributorBlockStatuses())
 
 func CheckDistributorBlockStatus(status string) error {
-	for _, s := range BlockStatuses {
+	for _, s := range distributorBlockStatuses {
 		if s == status {
 			return nil
 		}
@@ -25,5 +25,5 @@ func CheckDistributorBlockStatus(status string) error {
 }
 
 func GetAllDistributorBlockStatuses() []string {
-	return BlockStatuses
+	return distributorBlockStatuses
 }
