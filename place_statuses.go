@@ -23,7 +23,7 @@ func CheckPlaceStatus(status string) error {
 		}
 	}
 
-	return fmt.Errorf("%w: %s", ErrorInvalidPlaceStatus, status)
+	return fmt.Errorf("'%s': %w", status, ErrorInvalidPlaceStatus)
 }
 
 func GetAllPlaceStatuses() []string {

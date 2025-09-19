@@ -25,7 +25,7 @@ func CheckLocale(locale string) error {
 			return nil
 		}
 	}
-	return fmt.Errorf("%w: %s", ErrorUnsupportedLocale, locale)
+	return fmt.Errorf("'%s': %w", locale, ErrorUnsupportedLocale)
 }
 
 func GetAllLocales() []string {

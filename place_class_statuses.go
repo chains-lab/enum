@@ -21,7 +21,7 @@ func CheckPlaceClassStatus(status string) error {
 		}
 	}
 
-	return fmt.Errorf("%w: %s", ErrorInvalidPlaceClassStatus, status)
+	return fmt.Errorf("'%s': %w", status, ErrorInvalidPlaceClassStatus)
 }
 
 func GetAllPlaceClassStatuses() []string {

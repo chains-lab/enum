@@ -12,16 +12,16 @@ var userStatuses = []string{
 	UserStatusBlocked,
 }
 
-var ErrorUserStatusIsNotSupported = fmt.Errorf("user status is not supported")
+var ErrorUserStatusIsNotSupported = fmt.Errorf("user status is not supported, must be one of: %v", GetAllUserStatuses())
 
-func ParseUserStatus(status string) error {
+func CheckUserStatus(status string) error {
 	for _, userStatus := range userStatuses {
 		if userStatus == status {
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%w: %s", ErrorUserStatusIsNotSupported, status)
+	return fmt.Errorf("%s: %w", status, ErrorUserStatusIsNotSupported)
 }
 
 func GetAllUserStatuses() []string {
